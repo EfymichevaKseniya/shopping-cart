@@ -1,0 +1,31 @@
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  height: 60px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+}
+
+.cart__button {
+  position: relative;
+}
+
+.cart__items-count {
+  position: absolute;
+  left: -7px;
+  top: -7px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  border: 1px solid red;
+  font-size: 13px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

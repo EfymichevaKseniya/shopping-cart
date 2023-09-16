@@ -1,0 +1,18 @@
+.button_wrapper {
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button_text {
+  color: black;
+}
+
+.button_wrapper:hover {
+  color: white;
+  background-color: #ccc;
+}
