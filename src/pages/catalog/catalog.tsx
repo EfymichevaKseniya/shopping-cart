@@ -1,5 +1,6 @@
 import CatalogList from '@/entities/catalogList/catalogList';
 import { Layout } from '@/shared/layout/layout';
+import Preloader from '@/shared/preloader/preloader';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { productsFetch } from '@/store/reducers/productsSlice';
 import React, { useEffect } from 'react';
@@ -15,7 +16,7 @@ const Catalog: React.FC = () => {
     dispatch(productsFetch());
   }, []);
 
-  if (status === 'pending') return <div>Loading...</div>
+  if (status === LoadingStatus.PENDING) return <Preloader />
 
   if (status === 'rejected') return <div>error on server</div>
 
