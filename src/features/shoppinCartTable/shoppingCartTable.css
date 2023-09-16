@@ -1,0 +1,72 @@
+.cart__table-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 5px solid #fff;
+  border-top: 5px solid #fff;
+  border-bottom: 3px solid #fff;
+  border-collapse: collapse; 
+  outline: 3px solid #ffd300;
+  font-size: 15px;
+  background: #fff !important;
+  margin: 20px 0;
+}
+.cart__table-wrapper th {
+  font-weight: bold;
+  padding: 7px;
+  background: #ffd300;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #ffd300;
+}
+.cart__table-wrapper td {
+  padding: 7px;
+  border: none;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  font-size: 15px;
+}
+.cart__table-wrapper tbody tr:nth-child(even){
+  background: #f8f8f8 !important;
+}
+
+.cart__table-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-direction: row-reverse;
+}
+
+.total__price {
+  font-weight: bold;
+  font-size: 36px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.total__price-title {
+  color: black;
+}
+
+.total__price-amount {
+  color: red;
+}
+
+.remove__button {
+  border: 1px solid red;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: auto;
+  background-color: red;
+  color: white;
+  margin-top: auto;
+}
+
+.remove__button:hover {
+  background-color: rgb(218, 35, 35);
+  border-color: rgb(218, 35, 35);
+  color: white;
+}
