@@ -7,6 +7,7 @@ export type ProductItem = {
   image: string
   name: string
   price: number
+  count: number
 }
 
 export type ProductsState = {

@@ -86,4 +86,22 @@
   position: fixed;
 }
 
+.cart__table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.cart__product-count {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.cart__product-count .count {
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+  border-radius: 3px;
+  text-align: center;
 }
