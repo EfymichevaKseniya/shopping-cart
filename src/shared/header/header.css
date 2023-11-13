@@ -12,6 +12,7 @@
 
 .cart__button {
   position: relative;
+  color: black;
 }
 
 .cart__items-count {
