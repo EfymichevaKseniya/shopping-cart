@@ -1,4 +1,4 @@
-import React, { cloneElement, useState } from 'react';
+import React, { useState } from 'react';
 import './catalogCard.css'
 import Button from '@/shared/button/button';
 import { addToCart } from '@/store/reducers/shoppingCartSlice';
