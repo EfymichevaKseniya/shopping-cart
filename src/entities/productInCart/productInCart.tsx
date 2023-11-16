@@ -19,7 +19,7 @@ const ProductInCart: React.FC<ProductInCartP> = ({ product }) => {
     <tr key={product.id}>
     <td>
       <div className='cart__table-title'>
-        {product.name}
+        <span>{product.name}</span>
         <Button
           onClick={handleRemoveFromCart}
           className='remove__button'

@@ -55,11 +55,12 @@
 }
 
 .remove__button {
-  padding: 5px 10px;
   cursor: pointer;
   margin-left: auto;
   color: red;
   margin-top: auto;
+  width: 20px;
+  height: 20px;
 }
 
 .remove__button:hover {
@@ -104,4 +105,28 @@
   padding: 4px 10px;
   border-radius: 3px;
   text-align: center;
+}
+
+@media (max-width: 767px) {
+ .cart__table-footer {
+  flex-direction: column;
+  align-items: flex-end;
+ }
+
+ .cart__table-title span {
+    font-size: 13px;
+    flex: 1;
+ }
+
+ .remove__button {
+  margin: auto 0;
+ }
+
+ .cart__table-wrapper td {
+  font-size: 13px;
+ }
+
+ .total__price {
+  font-size: 28px;
+ }
 }
