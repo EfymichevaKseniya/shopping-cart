@@ -2,10 +2,11 @@ import React from 'react'
 import { formatPrice } from '@/helpers/formatPrice'
 import Button from '@/shared/button/button'
 import { useAppDispatch } from '@/store/hooks'
-import { decreaseCount, increaseCount, removeFromCart } from '@/store/reducers/shoppingCartSlice'
+import { removeFromCart } from '@/store/reducers/shoppingCartSlice'
 import { ProductInCartP } from './productInCart.options'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import ProductCount from '@/features/productCount/productCount'
 
 const ProductInCart: React.FC<ProductInCartP> = ({ product }) => {
   const dispatch = useAppDispatch()
@@ -13,9 +14,6 @@ const ProductInCart: React.FC<ProductInCartP> = ({ product }) => {
   const handleRemoveFromCart = () => {
     dispatch(removeFromCart(product))
   }
-
-  const handleIncreaseCount = () => dispatch(increaseCount(product.id))
-  const handleDecreaseCount = () => dispatch(decreaseCount(product.id))
 
   return (
     <tr key={product.id}>
@@ -31,11 +29,7 @@ const ProductInCart: React.FC<ProductInCartP> = ({ product }) => {
       </div>
     </td>
     <td>
-      <div className='cart__product-count'>
-        <Button title='-' onClick={handleDecreaseCount} />
-        <span className='count'>{product.count}</span>
-        <Button title='+' onClick={handleIncreaseCount} />
-      </div>
+      <ProductCount product={product} />
     </td>
     <td>{formatPrice.format(product.price * product.count)}</td>
   </tr>
