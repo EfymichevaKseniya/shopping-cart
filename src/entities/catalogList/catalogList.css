@@ -9,6 +9,7 @@
 @media (max-width: 991px) {
   .catalog__list-wrapper {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0 15px 20px;
   }
 }
 
@@ -16,6 +17,5 @@
   .catalog__list-wrapper {
     grid-template-columns: repeat(1, 1fr);
     gap: 5px;
-    padding: 0 15px;
   }
 }

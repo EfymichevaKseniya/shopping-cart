@@ -3,16 +3,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gray);
   border-radius: 5px;
   cursor: pointer;
 }
 
 .button_text {
-  color: black;
+  color: var(--black);
 }
 
 .button_wrapper:hover {
-  color: white;
-  background-color: #ccc;
+  color: var(--white);
+  background-color: var(--gray);
 }

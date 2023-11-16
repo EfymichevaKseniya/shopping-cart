@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import './styles/reset.css';
+import '@/styles/reset.css';
 import './App.css';
 import { ToastContainer } from 'react-toastify';
-import { Header } from './shared/header/header';
-import Catalog from './pages/catalog/catalog';
+import { Header } from '@/widgets/header/header';
+import Catalog from '@/pages/catalog/catalog';
 import 'react-toastify/dist/ReactToastify.css';
-import ShoppingCart from './pages/shoppingCart/page';
-import Home from './pages/home/home';
+import ShoppingCart from '@/pages/shoppingCart/page';
+import Home from '@/pages/home/home';
 
 function App() {
   return (

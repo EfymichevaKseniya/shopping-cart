@@ -1,5 +1,5 @@
 .card__wrapper {
-  border: 1px solid #ddd;
+  border: 1px solid var(--gray);
   border-radius: 10px;
   padding: 20px;
   display: grid;
@@ -27,7 +27,7 @@
 
 .card__price:after {
   content: ' \20BD';
-  color: black;
+  color: var(--black);
 }
 
 .card__info {
@@ -46,24 +46,24 @@
 
 .card__button,
 .card__button-order {
-  border: 1px solid red;
+  border: 1px solid var(--red);
   border-radius: 6px;
   padding: 5px 10px;
   cursor: pointer;
   margin-left: auto;
-  background-color: red;
-  color: white;
+  background-color: var(--red);
+  color: var(--white);
   margin-top: auto;
 }
 
 .card__button-order {
   background-color: transparent;
-  color: red;
+  color: var(--red);
 }
 
 .card__button:hover,
 .card__button-order:hover {
-  background-color: rgb(218, 35, 35);
-  border-color: rgb(218, 35, 35);
-  color: white;
+  background-color: var(--red-hover);
+  border-color: var(--red-hover);
+  color: var(--white);
 }

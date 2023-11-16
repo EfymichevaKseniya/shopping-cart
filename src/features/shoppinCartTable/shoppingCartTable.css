@@ -51,20 +51,20 @@
 }
 
 .total__price-amount {
-  color: red;
+  color: var(--red);
 }
 
 .remove__button {
   cursor: pointer;
   margin-left: auto;
-  color: red;
+  color: var(--red);
   margin-top: auto;
   width: 20px;
   height: 20px;
 }
 
 .remove__button:hover {
-  color: rgb(218, 35, 35);
+  color: var(--red-hover);
 }
 
 @keyframes fly {
@@ -101,7 +101,7 @@
 }
 
 .cart__product-count .count {
-  border: 1px solid #ccc;
+  border: 1px solid var(--gray);
   padding: 4px 10px;
   border-radius: 3px;
   text-align: center;
