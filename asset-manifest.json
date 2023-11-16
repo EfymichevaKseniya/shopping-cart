@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/reniary.github.io/shopping-cart/static/css/main.a9a761b1.css",
+    "main.js": "/reniary.github.io/shopping-cart/static/js/main.49da52a1.js",
+    "static/js/787.658bc779.chunk.js": "/reniary.github.io/shopping-cart/static/js/787.658bc779.chunk.js",
+    "index.html": "/reniary.github.io/shopping-cart/index.html",
+    "main.a9a761b1.css.map": "/reniary.github.io/shopping-cart/static/css/main.a9a761b1.css.map",
+    "main.49da52a1.js.map": "/reniary.github.io/shopping-cart/static/js/main.49da52a1.js.map",
+    "787.658bc779.chunk.js.map": "/reniary.github.io/shopping-cart/static/js/787.658bc779.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9a761b1.css",
+    "static/js/main.49da52a1.js"
+  ]
+}
