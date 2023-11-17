@@ -32,6 +32,7 @@ const CatalogCard: React.FC<ProductItem> = (product) => {
 
   return (
     <div className='card__wrapper' key={id}>
+      <AddToFavorite id={id} />
       {addedToCart && clonedElement}
       <figure className='card__image'>
         <img src={image} alt={name} />

@@ -3,6 +3,9 @@ import { LoadingStatus, ProductsState } from '../store.options';
 
 const initialState: ProductsState = {
   data: {items: []},
+  favorites: localStorage.getItem("favorites")
+  ? JSON.parse(localStorage.getItem("favorites") || '')
+  : {},
   status: LoadingStatus.IDLE,
 };
 
@@ -24,7 +27,21 @@ export const productsFetch = createAsyncThunk(
 const productsSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    addFavorite(state, action) {
+      const updatedFavorites = {
+        ...state.favorites,
+        [action.payload]: !state.favorites[action.payload],
+      };
+
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    
+      return {
+        ...state,
+        favorites: updatedFavorites,
+      };
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(productsFetch.pending, (state, action) => {
       state.status = LoadingStatus.PENDING;
@@ -38,5 +55,7 @@ const productsSlice = createSlice({
     })
   },
 });
+
+export const { addFavorite } = productsSlice.actions;
 
 export default productsSlice.reducer;

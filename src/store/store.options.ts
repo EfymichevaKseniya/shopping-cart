@@ -10,11 +10,13 @@ export type ProductItem = {
   name: string
   price: number
   count: number
+  favorite?: boolean
 }
 
 export type ProductsState = {
   data: { items: ProductItem[] }
   status: LoadingStatus
+  favorites: Record<string, boolean>
 }
 
 export enum LoadingStatus {

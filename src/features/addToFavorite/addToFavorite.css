@@ -1,0 +1,13 @@
+.btn__favorite {
+    border: none;
+    cursor: pointer;
+}
+
+.btn__favorite svg {
+    fill: none;
+    stroke: var(--black);
+}
+
+.btn__favorite svg:hover {
+    transform: scale(1.2);
+}
