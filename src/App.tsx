@@ -8,6 +8,7 @@ import Catalog from '@/pages/catalog/catalog';
 import 'react-toastify/dist/ReactToastify.css';
 import ShoppingCart from '@/pages/shoppingCart/page';
 import Home from '@/pages/home/home';
+import routes from '@/navigator/routes.json';
 
 function App() {
   return (
@@ -17,9 +18,9 @@ function App() {
         <Header />
         <div className="content-container">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shoppingCart" element={<ShoppingCart />} />
-            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/shopping-cart" element={<Home />} />
+            <Route path={routes.cart} element={<ShoppingCart />} />
+            <Route path={routes.catalog} element={<Catalog />} />
           </Routes>
         </div>
       </Router>
