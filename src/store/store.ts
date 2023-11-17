@@ -17,4 +17,7 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+
+export const getShoppingCart = (state: RootState) => state.shoppingCart;
+
 export default store;

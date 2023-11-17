@@ -6,6 +6,8 @@ const initialState = {
   cartItems: localStorage.getItem("cartItems")
     ? JSON.parse(localStorage.getItem("cartItems") || '')
     : [],
+    cartTotalQuantity: 0,
+    cartTotalAmount: 0,
 } as CartType;
 
 const shoppingCartSlice = createSlice({
@@ -38,11 +40,9 @@ const shoppingCartSlice = createSlice({
         state.cartItems[itemIndex].count -= 1;
 
       } else if (state.cartItems[itemIndex].count === 1) {
-        const nextCartItems = state.cartItems.filter(
+        state.cartItems = state.cartItems.filter(
           (item) => item.id !== action.payload
         );
-
-        state.cartItems = nextCartItems;
 
         toast.error("Товар удален из корзины", {
           position: "bottom-left",
@@ -59,6 +59,26 @@ const shoppingCartSlice = createSlice({
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
       return state;
     },
+    getTotals(state) {
+      let { total, quantity } = state.cartItems.reduce(
+        (cartTotal, cartItem) => {
+          const { price, count } = cartItem;
+          const itemTotal = price * count;
+
+          cartTotal.total += itemTotal;
+          cartTotal.quantity += count;
+
+          return cartTotal;
+        },
+        {
+          total: 0,
+          quantity: 0,
+        }
+      );
+      total = parseFloat(total.toFixed(2));
+      state.cartTotalQuantity = quantity;
+      state.cartTotalAmount = total;
+    },
     clearCart(state) {
        state.cartItems = [];
        toast.error("Все товары удалены из корзины", {
@@ -70,6 +90,6 @@ const shoppingCartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, clearCart, increaseCount, decreaseCount } = shoppingCartSlice.actions;
+export const { addToCart, removeFromCart, clearCart, increaseCount, decreaseCount, getTotals } = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;

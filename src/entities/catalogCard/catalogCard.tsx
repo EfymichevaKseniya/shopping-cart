@@ -4,11 +4,12 @@ import Button from '@/shared/button/button';
 import { addToCart } from '@/store/reducers/shoppingCartSlice';
 import { ProductItem } from '@/store/store.options';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { Link } from 'react-router-dom';
-import routes from '@/navigator/routes.json'
+import ProductCount from '@/features/productCount/productCount';
+import { getShoppingCart } from '@/store/store';
+import AddToFavorite from '@/features/addToFavorite/addToFavorite';
 
 const CatalogCard: React.FC<ProductItem> = (product) => {
-  const { cartItems } = useAppSelector(state => state.shoppingCart)
+  const { cartItems } = useAppSelector(getShoppingCart)
   const dispatch = useAppDispatch();
   const { id, image, name, price } = product;
   const [addedToCart, setAddedToCart] = useState(false)
@@ -39,10 +40,9 @@ const CatalogCard: React.FC<ProductItem> = (product) => {
       <div className='card__info'>
         <p className='card__title'>{name}</p>
         {foundedInCartById ? (
-          <Link
-            className='card__button-order'
-            to={routes.cart}
-          >Оформить заказ</Link>
+          <div className='card__product-count'>
+            <ProductCount product={product} />
+          </div>
         ) : (
           <Button
             title='Добавить в корзину'

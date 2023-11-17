@@ -1,17 +1,19 @@
-'use client';
 import React from 'react'
 import Button from '@/shared/button/button';
 import './header.css'
 import { useNavigate } from "react-router-dom";
-import { useAppSelector } from '@/store/hooks';
-import { RootState } from '@/store/store';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { getShoppingCart } from '@/store/store';
 import routes from '@/navigator/routes.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { getTotals } from '@/store/reducers/shoppingCartSlice';
 
 export const Header: React.FC = () => {
-  const navigate = useNavigate();
-  const { cartItems } = useAppSelector((state: RootState) => state.shoppingCart)
+  const navigate = useNavigate(); 
+  const dispatch = useAppDispatch()
+  dispatch(getTotals())
+  const { cartTotalQuantity } = useAppSelector(getShoppingCart)
   return (
     <div className='header__wrapper'>
       <Button
@@ -24,7 +26,7 @@ export const Header: React.FC = () => {
         >
           <FontAwesomeIcon icon={faShoppingCart} />
         </Button>
-        <span className='cart__items-count'>{cartItems.length || 0}</span>
+        <span className='cart__items-count'>{cartTotalQuantity}</span>
       </div>
     </div>
   )

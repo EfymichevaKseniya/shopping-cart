@@ -4,9 +4,10 @@ import './shoppingCart.css'
 import { useAppSelector } from '@/store/hooks';
 import ShoppinCartTable from '@/features/shoppinCartTable/shoppingCartTable';
 import Preloader from '@/shared/preloader/preloader';
+import { getShoppingCart } from '@/store/store';
 
 const ShoppingCart: React.FC = () => {
-  const { cartItems } = useAppSelector(state => state.shoppingCart)
+  const { cartItems } = useAppSelector(getShoppingCart)
   const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
@@ -14,7 +15,7 @@ const ShoppingCart: React.FC = () => {
 
     setTimeout(() => {
       setLoading(false)
-    }, 1000)
+    }, 500)
   }, [])
 
   if (loading) return <Preloader />

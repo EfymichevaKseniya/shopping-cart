@@ -1,5 +1,7 @@
 export type CartType = {
   cartItems: ProductItem[]
+  cartTotalQuantity: number
+  cartTotalAmount: number
 }
 
 export type ProductItem = {

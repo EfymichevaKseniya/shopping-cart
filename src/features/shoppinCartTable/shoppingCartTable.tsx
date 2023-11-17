@@ -4,12 +4,15 @@ import './shoppingCartTable.css'
 import ProductInCart from '@/entities/productInCart/productInCart';
 import { formatPrice } from '@/helpers/formatPrice';
 import Button from '@/shared/button/button';
-import { useAppDispatch } from '@/store/hooks';
-import { clearCart } from '@/store/reducers/shoppingCartSlice';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { clearCart, getTotals } from '@/store/reducers/shoppingCartSlice';
+import { getShoppingCart } from '@/store/store';
 
 const ShoppinCartTable: React.FC<ShoppingCartTableP> = ({ items }) => {
-  const totalPrice = items.reduce((sum, item) => sum += item.price * item.count, 0)
   const dispatch = useAppDispatch()
+  dispatch(getTotals())
+  const totalPrice = useAppSelector(getShoppingCart).cartTotalAmount
+
   const handleClearCart = () => dispatch(clearCart())
   return (
     <section>
